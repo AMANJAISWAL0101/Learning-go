@@ -1,38 +1,37 @@
 package main
 
-import(
-        "fmt"
+import (
+	"fmt"
 	"math"
 )
 
-func main(){
-  
-  var   investmentAmount, years, expectedReturnRate, inflationRate float64
+func main() {
 
-  fmt.Println("InflationRate is: ")
-  fmt.Scan(&inflationRate)
+	var investmentAmount, years, expectedReturnRate, inflationRate float64
 
-  fmt.Println("Time duration in years: ")
-  fmt.Scan(&years)
+	fmt.Println("InflationRate is: ")
+	fmt.Scan(&inflationRate)
 
-  fmt.Println("expected return rate is: ")
-  fmt.Scan(&expectedReturnRate)
+	fmt.Println("Time duration in years: ")
+	fmt.Scan(&years)
 
-  fmt.Println("investment amount is: ")
-  fmt.Scan(&investmentAmount)
+	fmt.Println("expected return rate is: ")
+	fmt.Scan(&expectedReturnRate)
 
-  futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	fmt.Println("investment amount is: ")
+	fmt.Scan(&investmentAmount)
 
-  futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+	futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
 
-  formattedFV := fmt.Sprintf("Future Value : %.1f\n", futureValue)
+	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
 
-  formattedFRV := fmt.Sprintf("Future real value with inflation : %.1f\n", futureRealValue)
+	formattedFV := fmt.Sprintf("Future Value : %.1f\n", futureValue)
 
-  fmt.Print(formattedFV,formattedFRV)
+	formattedFRV := fmt.Sprintf("Future real value with inflation : %.1f\n", futureRealValue)
 
-  fmt.Printf(`Future Value is: %.1f 
-Future Value with inflation is: %.1f`,futureValue,futureRealValue)
+	fmt.Print(formattedFV, formattedFRV)
 
+	fmt.Printf(`Future Value is: %.1f 
+Future Value with inflation is: %.1f`, futureValue, futureRealValue)
 
 }

@@ -1,31 +1,31 @@
 package main
 
-import(
-        "fmt"
+import (
+	"fmt"
 	"math"
 )
 
-func main(){
-  
-  var   investmentAmount, years, expectedReturnRate, inflationRate float64
+func main() {
 
-  fmt.Println("InflationRate is: ")
-  fmt.Scan(&inflationRate)
+	var investmentAmount, years, expectedReturnRate, inflationRate float64
 
-  fmt.Println("Time duration in years: ")
-  fmt.Scan(&years)
+	fmt.Println("InflationRate is: ")
+	fmt.Scan(&inflationRate)
 
-  fmt.Println("expected return rate is: ")
-  fmt.Scan(&expectedReturnRate)
+	fmt.Println("Time duration in years: ")
+	fmt.Scan(&years)
 
-  fmt.Println("investment amount is: ")
-  fmt.Scan(&investmentAmount)
+	fmt.Println("expected return rate is: ")
+	fmt.Scan(&expectedReturnRate)
 
-  futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	fmt.Println("investment amount is: ")
+	fmt.Scan(&investmentAmount)
 
-  futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+	futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
 
-  fmt.Println("future Value is: ", futureValue)
+	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
 
-  fmt.Println("future Real Value is :", futureRealValue)
+	fmt.Println("future Value is: ", futureValue)
+
+	fmt.Println("future Real Value is :", futureRealValue)
 }

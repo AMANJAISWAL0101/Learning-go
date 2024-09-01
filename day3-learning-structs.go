@@ -1,33 +1,32 @@
 package main
 
-import(
+import (
 	"fmt"
 	"time"
 )
 
-type User struct{
+type User struct {
 	firstName string
-	lastName string
-	dob string
+	lastName  string
+	dob       string
 	createdAt time.Time
 }
 
-func main(){
-  userFirstName := getValue("Enter your first name")
-  userLastName := getValue("Enter your last name")
-  userDOB := getValue("Enter your DOB")
+func main() {
+	userFirstName := getValue("Enter your first name")
+	userLastName := getValue("Enter your last name")
+	userDOB := getValue("Enter your DOB")
 
-  var appUser User
+	var appUser User
 
-  appUser = User{
-	  firstName: userFirstName,
-	  lastName: userLastName,
-	  dob: userDOB,
-	  createdAt: time.Now(),
-	  
-  }
-  
-  outputValue(appUser)
+	appUser = User{
+		firstName: userFirstName,
+		lastName:  userLastName,
+		dob:       userDOB,
+		createdAt: time.Now(),
+	}
+
+	outputValue(appUser)
 
 }
 
@@ -35,9 +34,9 @@ func outputValue(u User) {
 	fmt.Println(u)
 }
 
-func getValue(promptString string) string{
+func getValue(promptString string) string {
 	fmt.Println(promptString)
-	var value string 
+	var value string
 	fmt.Scan(&value)
 	return value
 
